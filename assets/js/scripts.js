@@ -21,3 +21,23 @@ function move() {
         else if (key == keyPres.arrowDown && keys.key_down) {px+=5; player.style.marginTop=px+"px";}
     });
 }
+
+function movCam() {
+    const cam = {
+        x: 0,
+        y: 0,
+        width: wordSize.width,
+        heigt: wordSize.heigt,
+        camTop: function(){return this.y + (this.heigt*0.25);},
+        camDown: function(){return this.y + (this.heigt*0.75);},
+        camLeft: function(){return this.x + (this.width*0.25);},
+        camRight: function(){return this.x + (this.width*0.75);}
+    };
+
+}
+
+for (var cont=0; cont>2;cont++) {
+    cont--;
+    movCam();
+}
+move();
