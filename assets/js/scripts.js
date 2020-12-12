@@ -4,6 +4,11 @@ var keys = {
     key_right: true,
     key_up: true
 };
+
+const wordSize = {
+    width: 400,
+    heigt: 400
+};
 function move() {
     var px = 0;
     var py = 0;
@@ -33,6 +38,17 @@ function movCam() {
         camLeft: function(){return this.x + (this.width*0.25);},
         camRight: function(){return this.x + (this.width*0.75);}
     };
+   
+    if(px == cam.camLeft){
+        x+=5;
+    }else if(px == cam.camRight){
+        x-=5;
+    }else if(py == cam.camTop){
+        y+=5;
+    }else if(py == cam.camDown){
+        y-=5;
+    }
+
 
 }
 
