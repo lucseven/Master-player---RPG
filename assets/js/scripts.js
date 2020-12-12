@@ -11,13 +11,13 @@ function move() {
     document.addEventListener("keydown",function(event){
         var player = document.getElementById("playerimg");
         var key = event.keyCode;
-        if (key == 37 && keys.key_left) {py-=5; player.style.marginLeft=py+"px";}
-        else if (key == 38 && keys.key_up) {px-=5; player.style.marginTop=px+"px";player.style.display=solid;playerStop.style.display=none}
-        else if (key == 39 && keys.key_right) {py+=5; player.style.marginLeft=py+"px";}
-        else if (key == 40 && keys.key_down) {px+=5; player.style.marginTop=px+"px";}
-        if (key == 65 && keys.key_left) {py-=5; player.style.marginLeft=py+"px";}
-        else if (key == 87 && keys.key_up){px-=5; player.style.marginTop=px+"px";player.style.display=solid;playerStop.style.display=none}
-        else if (key == 68 && keys.key_right) {py+=5; player.style.marginLeft=py+"px";}
-        else if (key == 83 && keys.key_down) {px+=5; player.style.marginTop=px+"px";}
+        if (key == keyPres.a && keys.key_left) {py-=5; player.style.marginLeft=py+"px";}
+        else if (key == keyPres.w && keys.key_up) {px-=5; player.style.marginTop=px+"px";player.style.display=solid;playerStop.style.display=none}
+        else if (key == keyPres.d && keys.key_right) {py+=5; player.style.marginLeft=py+"px";}
+        else if (key == keyPres.s && keys.key_down) {px+=5; player.style.marginTop=px+"px";}
+        if (key == keyPres.arrowLeft && keys.key_left) {py-=5; player.style.marginLeft=py+"px";}
+        else if (key == keyPres.arrowUp && keys.key_up){px-=5; player.style.marginTop=px+"px";player.style.display=solid;playerStop.style.display=none}
+        else if (key == keyPres.arrowRight && keys.key_right) {py+=5; player.style.marginLeft=py+"px";}
+        else if (key == keyPres.arrowDown && keys.key_down) {px+=5; player.style.marginTop=px+"px";}
     });
 }
