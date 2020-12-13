@@ -4,17 +4,14 @@ var keys = {
     key_right: true,
     key_up: true
 };
-
 const wordSize = {
     width: 400,
     heigt: 400
 };
-
 var player = {
     px: 0,
     py: 0
 };
-
 var word = {
     word: 1,
     layer: 1
@@ -22,18 +19,37 @@ var word = {
 
 const wordBackground = documen.getElementById("background");
 
-function colision() {
-    if(player.px >= 400){keys.key_right=false;}
-    else {keys.key_right=true;}
+function movCam() {
+    var cam = {
+        x: 0,
+        y: 0,
+        width: wordSize.width,
+        heigt: wordSize.heigt,
+        camTop: function(){return this.y + (this.heigt*0.25);},
+        camDown: function(){return this.y + (this.heigt*0.75);},
+        camLeft: function(){return this.x + (this.width*0.25);},
+        camRight: function(){return this.x + (this.width*0.75);}
+    };
+   
+    if(player.px == cam.camLeft){cam.x+=5;wordBackgroun.style.backgroundPositionLeft=cam.x+"px";player.px-=5;
+    }else if(player.px == cam.camRight){cam.x-=5;wordBackgroun.style.backgroundPositionTop=-cam.x+"px";player.px+=5;
+    }else if(player.py == cam.camTop){cam.y+=5;wordBackgroun.style.backgroundPositionLeft=cam.y+"px";player.py-=5;
+    }else if(player.py == cam.camDown){cam.y-=5;wordBackgroun.style.backgroundPositionTop=-cam.y+"px";player.py+=5;}
+}
 
-    if(player.px <= 0){keys.left=false;}
-    else {keys.key_left=true;}
-
-    if(player.py >= 400){keys.key_up=false;}
-    else {keys.key_up=true;}
-
-    if(player.px <= 0){keys.key_down=false;}
-    else {keys.key_down=true;}
+function backgroundUbdate() {
+    if (cam.x < 0) {
+        backgrondX = cam.x - 0;
+    }
+    if (cam.x > 0) {
+        backgrondX = cam.x - 500;
+    }
+    if (cam.y < 0) {
+        backgrondY = cam.y - 0;
+    }
+    if (cam.y > 0) {
+        backgrondY = cam.y - 500;
+    }
 }
 
 function dors1_1() {
@@ -114,79 +130,404 @@ function dors16_3() {
 
 
 function word1_1() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word1_2() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word2_2() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word3_2() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word4_2() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word5_2() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word6_2() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word7_2() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word8_2() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word1_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word2_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word3_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word4_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word5_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word6_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word7_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word8_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word9_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word10_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word11_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word12_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word13_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word14_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word15_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 function word16_3() {
-    
+    dors1_1();
+    if(player.px >= backgroundUbdate()){keys.key_right=false;}
+    else {keys.key_right=true;}
+
+    if(player.px <= backgroundUbdate()){keys.left=false;}
+    else {keys.key_left=true;}
+
+    if(player.py >= backgroundUbdate()){keys.key_up=false;}
+    else {keys.key_up=true;}
+
+    if(player.px <= backgroundUbdate()){keys.key_down=false;}
+    else {keys.key_down=true;}
+
+    wordBackground.style.backgroundImage="url('../assets/img/words/word1_1/backgrond.png');";
 }
 
 function words() {
@@ -199,40 +540,22 @@ function words() {
     if(word == 6 && layer == 2){word6_2()}
     if(word == 7 && layer == 2){word7_2()}
     if(word == 8 && layer == 2){word8_2()}
-    if(word == 1 && layer == 2){word1_3()}
-    if(word == 2 && layer == 2){word2_3()}
-    if(word == 3 && layer == 2){word3_3()}
-    if(word == 4 && layer == 2){word4_3()}
-    if(word == 5 && layer == 2){word5_3()}
-    if(word == 6 && layer == 2){word6_3()}
-    if(word == 7 && layer == 2){word7_3()}
-    if(word == 8 && layer == 2){word8_3()}
-    if(word == 1 && layer == 2){word9_3()}
-    if(word == 2 && layer == 2){word10_3()}
-    if(word == 3 && layer == 2){word11_3()}
-    if(word == 4 && layer == 2){word12_3()}
-    if(word == 5 && layer == 2){word13_3()}
-    if(word == 6 && layer == 2){word14_3()}
-    if(word == 7 && layer == 2){word15_3()}
-    if(word == 8 && layer == 2){word16_3()}
-}
-
-function movCam() {
-    var cam = {
-        x: 0,
-        y: 0,
-        width: wordSize.width,
-        heigt: wordSize.heigt,
-        camTop: function(){return this.y + (this.heigt*0.25);},
-        camDown: function(){return this.y + (this.heigt*0.75);},
-        camLeft: function(){return this.x + (this.width*0.25);},
-        camRight: function(){return this.x + (this.width*0.75);}
-    };
-   
-    if(player.px == cam.camLeft){cam.x+=5;wordBackgroun.style.backgroundPositionLeft=cam.x+"px";player.px-=5;
-    }else if(player.px == cam.camRight){cam.x-=5;wordBackgroun.style.backgroundPositionTop=-cam.x+"px";player.px+=5;
-    }else if(player.py == cam.camTop){cam.y+=5;wordBackgroun.style.backgroundPositionLeft=cam.y+"px";player.py-=5;
-    }else if(player.py == cam.camDown){cam.y-=5;wordBackgroun.style.backgroundPositionTop=-cam.y+"px";player.py+=5;}
+    if(word == 1 && layer == 3){word1_3()}
+    if(word == 2 && layer == 3){word2_3()}
+    if(word == 3 && layer == 3){word3_3()}
+    if(word == 4 && layer == 3){word4_3()}
+    if(word == 5 && layer == 3){word5_3()}
+    if(word == 6 && layer == 3){word6_3()}
+    if(word == 7 && layer == 3){word7_3()}
+    if(word == 8 && layer == 3){word8_3()}
+    if(word == 9 && layer == 3){word9_3()}
+    if(word == 10 && layer == 3){word10_3()}
+    if(word == 11 && layer == 3){word11_3()}
+    if(word == 12 && layer == 3){word12_3()}
+    if(word == 13 && layer == 3){word13_3()}
+    if(word == 14 && layer == 3){word14_3()}
+    if(word == 15 && layer == 3){word15_3()}
+    if(word == 16 && layer == 3){word16_3()}
 }
 
 function animationPlayer() {
@@ -274,7 +597,6 @@ function movePlayer() {
 for (var cont=0;cont>2;cont++) {
     cont--;
     movCam();
-    colision();
     words();
 }
 movePlayer();
